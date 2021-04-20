@@ -1,0 +1,478 @@
+<!doctype html>
+<html>
+	<!--VIEWPORT-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="coopTemplateStyle.css">
+	<style>
+		body {
+			font-size: 1.5em;
+		}
+		.content {
+			width: 85%;
+			margin: 45px auto 45px auto;
+			margin-left: auto;
+			margin-right: auto;
+/*			background-color: antiquewhite;*/
+			text-align: center;
+		}
+		.floor {
+			padding: 15px;
+
+		}
+		.floor > div {
+			width: 100%;
+			min-width: 225px;
+			height: 300px;
+			background-color: #D6D6D6;
+			box-shadow: 5px 5px 5px gray;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 15px;
+		}
+		.floor table {
+			margin-left: auto;
+			margin-right: auto;
+			text-align: left;
+		}
+		.floor-button, .floor-pdf {
+			width: 60%;
+			height: 40px;
+			line-height: 40px;
+			border: 2px gray solid;
+			margin-left: auto;
+			margin-right:auto;
+			transition: background-color 1s, color 1s;
+		}
+		.floor-button:hover, .floor-pdf:hover {
+			cursor: pointer;
+			background-color: grey;
+			color: white;
+		}
+		.floor-pdf {
+			color: black;
+			text-decoration: none;
+			padding: 5px;
+			display: none;
+		}
+		.floor-pdf:visited {
+			color: black;
+		}
+		.modal-body {
+			text-align: center;
+		}
+		@media only screen and (max-width: 991px){
+			.content {
+				width: 100%;
+			}
+			.modal-body img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		@media (min-width: 768px) {
+			.modal-xl {
+				width: 90%;
+				max-width:1200px;
+		  }
+		}
+ 
+		
+		@media only screen and (max-width: 767px){
+			.floor > div {
+				width: 85%;
+			}
+/* these styles will make mobile only view pdfs from the floor plan cards
+			.floor-button{
+				display: none;
+			}
+			.floor-pdf {
+				display: inline;
+			}
+*/
+		}
+
+		
+	
+	</style>
+<meta charset="utf-8">
+<title>Floor Plans</title>
+</head>
+<header>
+	
+	<a href="index.html"><img src="photos/logo.png" id="headLogo" alt="logo"></a>	
+	
+	<nav class="navbar navbar-expand-lg" style="background-color: #A8AC86;">
+		<button class="navbar-toggler custom-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav" style="justify-content: center">
+			<ul class="navbar-nav" >
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="ourStory.html">About</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="floor-plans.html">Floor Plans</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="gallery.html">Gallery</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contact.php">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	
+	<img id="bannerHome" src="photos/floor-plans.jpeg" alt="banner photo" width="100%" height="100%">
+
+	<img id="bannerHomeMobile" src="photos/floor-planssmall.jpeg" alt="banner photo" width="100%" height="100%">
+	
+</header>
+<body>
+	<div class = "content row">	
+	<div class = "floor col-lg-4 col-md-6" style="display: none">
+		<div>
+			<h1>Birch</h1>
+			<table>
+				<tr><td><p><img src="photos/BedIcon.gif" alt = "Bed Icon"> ? Bed</p></td></tr>
+				<tr><td><p><img src="photos/BathIcon.gif" alt = "Bath Icon"> ? Bath</p></td></tr>
+				<tr><td><p><img src = "photos/Floor-PlanIcon.gif" alt = "Floor Plan Icon"> ? sq ft</p></td></tr>
+			</table>
+			<div type = "button" class = "floor-button" data-bs-toggle = "modal" data-bs-target="#mapleModal">VIEW</div>
+			<a href = "photos/pdfs/birch.pdf#zoom=400" class = "floor-pdf">VIEW (PDF)</a>
+		</div>
+	</div>
+	<div class = "floor col-lg-4 col-md-6">
+		<div>
+			<h1>Willow</h1>
+			<table>
+				<tr><td><p><img src="photos/BedIcon.gif" alt = "Bed Icon"> 1 Bed + Den</p></td></tr>
+				<tr><td><p><img src="photos/BathIcon.gif" alt = "Bath Icon"> 1 Bath</p></td></tr>
+				<tr><td><p><img src = "photos/Floor-PlanIcon.gif" alt = "Floor Plan Icon"> 1047 sq ft</p></td></tr>
+			</table>
+			<div type = "button" class = "floor-button" data-bs-toggle = "modal" data-bs-target="#willowModal">VIEW</div>
+			<a href = "photos/pdfs/willow.pdf#zoom=400" class = "floor-pdf">VIEW (PDF)</a>
+		</div>
+	</div>
+	<div class = "floor col-lg-4 col-md-6">
+		<div>
+			<h1>Redwood</h1>
+			<table>
+				<tr><td><p><img src="photos/BedIcon.gif" alt = "Bed Icon"> 2 Bed</p></td></tr>
+				<tr><td><p><img src="photos/BathIcon.gif" alt = "Bath Icon"> 2 Bath</p></td></tr>
+				<tr><td><p><img src = "photos/Floor-PlanIcon.gif" alt = "Floor Plan Icon"> 1128 sq ft</p></td></tr>
+			</table>
+			<div type = "button" class = "floor-button" data-bs-toggle = "modal" data-bs-target="#redwoodModal">VIEW</div>
+			<a href = "photos/pdfs/redwood.pdf#zoom=400" class = "floor-pdf">VIEW (PDF)</a>
+		</div>
+	</div>
+	<div class = "floor col-lg-4 col-md-6">
+		<div>
+			<h1>Butternut</h1>
+			<table>
+				<tr><td><p><img src="photos/BedIcon.gif" alt = "Bed Icon"> 2 Bed</p></td></tr>
+				<tr><td><p><img src="photos/BathIcon.gif" alt = "Bath Icon"> 2 Bath</p></td></tr>
+				<tr><td><p><img src = "photos/Floor-PlanIcon.gif" alt = "Floor Plan Icon"> 1130 sq ft</p></td></tr>
+			</table>
+			<div type = "button" class = "floor-button" data-bs-toggle = "modal" data-bs-target="#butternutModal">VIEW</div>
+			<a href = "photos/pdfs/butternut.pdf#zoom=400" class = "floor-pdf">VIEW (PDF)</a>
+		</div>
+	</div>
+	<div class = "floor col-lg-4 col-md-6">
+		<div>
+			<h1>Chestnut</h1>
+			<table>
+				<tr><td><p><img src="photos/BedIcon.gif" alt = "Bed Icon"> 2 Bed</p></td></tr>
+				<tr><td><p><img src="photos/BathIcon.gif" alt = "Bath Icon"> 2 Bath</p></td></tr>
+				<tr><td><p><img src = "photos/Floor-PlanIcon.gif" alt = "Floor Plan Icon"> 1229 sq ft</p></td></tr>
+			</table>
+			<div type = "button" class = "floor-button" data-bs-toggle = "modal" data-bs-target="#chestnutModal">VIEW</div>
+			<a href = "photos/pdfs/chestnut.pdf#zoom=400" class = "floor-pdf">VIEW (PDF)</a>
+		</div>
+	</div>
+	<div class = "floor col-lg-4 col-md-6">
+		<div>
+			<h1>Pine</h1>
+			<table>
+				<tr><td><p><img src="photos/BedIcon.gif" alt = "Bed Icon"> 2 Bed</p></td></tr>
+				<tr><td><p><img src="photos/BathIcon.gif" alt = "Bath Icon"> 2 Bath</p></td></tr>
+				<tr><td><p><img src = "photos/Floor-PlanIcon.gif" alt = "Floor Plan Icon"> 1337 sq ft</p></td></tr>
+			</table>
+			<div type = "button" class = "floor-button" data-bs-toggle = "modal" data-bs-target="#pineModal">VIEW</div>
+			<a href = "photos/pdfs/pine.pdf#zoom=400" class = "floor-pdf">VIEW (PDF)</a>
+		</div>
+	</div>
+	<div class = "floor col-lg-4 col-md-6">
+		<div>
+			<h1>Hawthorne</h1>
+			<table>
+				<tr><td><p><img src="photos/BedIcon.gif" alt = "Bed Icon"> 2 Bed + Den</p></td></tr>
+				<tr><td><p><img src="photos/BathIcon.gif" alt = "Bath Icon"> 2 Bath</p></td></tr>
+				<tr><td><p><img src = "photos/Floor-PlanIcon.gif" alt = "Floor Plan Icon"> 1404 sq ft</p></td></tr>
+			</table>
+			<div type = "button" class = "floor-button" data-bs-toggle = "modal" data-bs-target="#hawthorneModal">VIEW</div>
+			<a href = "photos/pdfs/hawthorne.pdf#zoom=400" class = "floor-pdf">VIEW (PDF)</a>
+		</div>
+	</div>
+	<div class = "floor col-lg-4 col-md-6">
+		<div>
+			<h1>Locust</h1>
+			<table>
+				<tr><td><p><img src="photos/BedIcon.gif" alt = "Bed Icon"> 2 Bed + Den</p></td></tr>
+				<tr><td><p><img src="photos/BathIcon.gif" alt = "Bath Icon"> 2 Bath</p></td></tr>
+				<tr><td><p><img src = "photos/Floor-PlanIcon.gif" alt = "Floor Plan Icon"> 1367 sq ft</p></td></tr>
+			</table>
+			<div type = "button" class = "floor-button" data-bs-toggle = "modal" data-bs-target="#locustModal">VIEW</div>
+			<a href = "photos/pdfs/locust.pdf#zoom=400" class = "floor-pdf">VIEW (PDF)</a>
+		</div>
+	</div>
+	<div class = "floor col-lg-4 col-md-6">
+		<div>
+			<h1>Hickory</h1>
+			<table>
+				<tr><td><p><img src="photos/BedIcon.gif" alt = "Bed Icon"> 2 Bed + Den</p></td></tr>
+				<tr><td><p><img src="photos/BathIcon.gif" alt = "Bath Icon"> 2 Bath</p></td></tr>
+				<tr><td><p><img src = "photos/Floor-PlanIcon.gif" alt = "Floor Plan Icon"> 1403 sq ft</p></td></tr>
+			</table>
+			<div type = "button" class = "floor-button" data-bs-toggle = "modal" data-bs-target="#hickoryModal">VIEW</div>
+			<a href = "photos/pdfs/hickory.pdf#zoom=400" class = "floor-pdf">VIEW (PDF)</a>
+		</div>
+	</div>
+	
+<!--
+		<div class = "floor col-lg-4"><p>hi</p></div>
+		<div class = "floor col-lg-4"></div>
+		<div class = "floor col-lg-4"></div>
+		
+		<div class = "floor col-lg-4"></div>
+		<div class = "floor col-lg-4"><p>hello</p></div>
+		<div class = "floor col-lg-4"></div>
+		
+		<div class = "floor col-lg-4"></div>
+		<div class = "floor col-lg-4"></div>
+		<div class = "floor col-lg-4"><p>goodbye</p></div>
+		
+		<div class = "floor col-lg-4"></div>
+-->
+		
+	
+	</div>
+<!--MODALS BELOW HERE-->
+<!-- Modal -->
+<div class="modal fade floor-plan-modal" id="willowModal" tabindex="-1" aria-labelledby="willowModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="willowModalLabel">Willow Floor Plan</h5>
+      	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		</div>
+		<div class="modal-body">
+			<img src = "photos/floors/willow.png" alt = "willow floor plan">
+		<div class="modal-footer">
+			<a href = "photos/pdfs/willow.pdf#zoom=400" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Full Map (PDF)</a>
+		</div>
+      	</div>
+    </div>
+  </div>
+</div>
+<div class="modal fade floor-plan-modal" id="redwoodModal" tabindex="-1" aria-labelledby="redwoodModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="redwoodModalLabel">Redwood Floor Plan</h5>
+      	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		</div>
+		<div class="modal-body">
+			<img src = "photos/floors/redwood.png" alt = "redwood floor plan">
+		<div class="modal-footer">
+			<a href = "photos/pdfs/redwood.pdf#zoom=400" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Full Map (PDF)</a>
+		</div>
+      	</div>
+    </div>
+  </div>
+</div>
+<div class="modal fade floor-plan-modal" id="butternutModal" tabindex="-1" aria-labelledby="butternutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="butternutModalLabel">Butternut Floor Plan</h5>
+      	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		</div>
+		<div class="modal-body">
+			<img src = "photos/floors/butternut.png" alt = "butternut floor plan">
+		<div class="modal-footer">
+			<a href = "photos/pdfs/butternut.pdf#zoom=400" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Full Map (PDF)</a>
+		</div>
+      	</div>
+    </div>
+  </div>
+</div>
+<div class="modal fade floor-plan-modal" id="chestnutModal" tabindex="-1" aria-labelledby="chestnutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="chestnutModalLabel">Chestnut Floor Plan</h5>
+      	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		</div>
+		<div class="modal-body">
+			<img src = "photos/floors/chestnut.png" alt = "chestnut floor plan">
+		<div class="modal-footer">
+			<a href = "photos/pdfs/chestnut.pdf#zoom=400" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Full Map (PDF)</a>
+		</div>
+      	</div>
+    </div>
+  </div>
+</div>
+<div class="modal fade floor-plan-modal" id="pineModal" tabindex="-1" aria-labelledby="pineModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pineModalLabel">Pine Floor Plan</h5>
+      	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		</div>
+		<div class="modal-body">
+			<img src = "photos/floors/pine.png" alt = "pine floor plan">
+		<div class="modal-footer">
+			<a href = "photos/pdfs/pine.pdf#zoom=400" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Full Map (PDF)</a>
+		</div>
+      	</div>
+    </div>
+  </div>
+</div>
+<div class="modal fade floor-plan-modal" id="hawthorneModal" tabindex="-1" aria-labelledby="hawthorneModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="hawthorneModalLabel">Hawthorne Floor Plan</h5>
+      	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		</div>
+		<div class="modal-body">
+			<img src = "photos/floors/hawthorne.png" alt = "hawthorne floor plan">
+		<div class="modal-footer">
+			<a href = "photos/pdfs/hawthorne.pdf#zoom=400" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Full Map (PDF)</a>
+		</div>
+      	</div>
+    </div>
+  </div>
+</div>
+<div class="modal fade floor-plan-modal" id="locustModal" tabindex="-1" aria-labelledby="locustModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="locustModalLabel">Locust Floor Plan</h5>
+      	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		</div>
+		<div class="modal-body">
+			<img src = "photos/floors/locust.png" alt = "locust floor plan">
+		<div class="modal-footer">
+			<a href = "photos/pdfs/locust.pdf#zoom=400" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Full Map (PDF)</a>
+		</div>
+      	</div>
+    </div>
+  </div>
+</div>
+<div class="modal fade floor-plan-modal" id="hickoryModal" tabindex="-1" aria-labelledby="hickoryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="hickoryModalLabel">Hickory Floor Plan</h5>
+      	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		</div>
+		<div class="modal-body">
+			<img src = "photos/floors/hickory.png" alt = "hickory floor plan">
+		<div class="modal-footer">
+			<a href = "photos/pdfs/hickory.pdf#zoom=400" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Full Map (PDF)</a>
+		</div>
+      	</div>
+    </div>
+  </div>
+</div>
+<div class="modal fade floor-plan-modal" id="mapleModal" tabindex="-1" aria-labelledby="mapleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mapleModalLabel">Maple Floor Plan</h5>
+      	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		</div>
+		<div class="modal-body">
+			<img src = "photos/floors/maple.png" alt = "maple floor plan">
+		<div class="modal-footer">
+			<a href = "photos/pdfs/maple.pdf#zoom=400" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Full Map (PDF)</a>
+		</div>
+      	</div>
+    </div>
+  </div>
+</div>
+<div class="modal fade floor-plan-modal" id="birchModal" tabindex="-1" aria-labelledby="birchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="birchModalLabel">Birch Floor Plan</h5>
+      	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		</div>
+		<div class="modal-body">
+			<img src = "photos/floors/birch.png" alt = "birch floor plan">
+		<div class="modal-footer">
+			<a href = "photos/pdfs/birch.pdf#zoom=400" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Full Map (PDF)</a>
+		</div>
+      	</div>
+    </div>
+  </div>
+</div>
+</body>
+<footer>
+	
+	
+	<div class="row" id="footContainer">
+		
+		
+		<div id="navFoot" class="col-lg-4">
+			<h4><strong>Navigation:</strong></h4>
+			
+			<p>
+				<div id="divFootNav">
+					<u>
+						<a class="nav-link" href="index.html">Home</a>
+						<a class="nav-link" href="ourStory.html">About</a>
+						<a class="nav-link" href="floor-plans.html">Floor Plans</a>
+						<a class="nav-link" href="gallery.html">Gallery</a>
+						<a class="nav-link" href="contact.php">Contact</a>
+					</u>
+				</div>
+			</p>
+		</div>
+
+		<div class="col-lg-4">
+			<h4><strong>Vintage Cooperative of Prairie Trail</strong></h4>
+
+			<p>
+				1370 SW Magazine Rd<br>
+				Ankeny, Iowa 50023<br>
+				515.279.3000
+			</p>
+			
+			<button id="footContact" onClick="document.location='contact.php'">Contact</button>
+		</div>
+
+		<div class="col-lg-4 order-first order-lg-last">
+
+			<img id="footLogo" src="photos/logo.png" alt="logo">
+			
+		</div>
+		
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	<script src="js/main.js"></script>
+
+</footer>		
+</html>
+
+

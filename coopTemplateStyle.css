@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body, footer{
+	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
+}
+
+/*Header content*/
+
+header{
+	text-align: center;
+}
+
+#headLogo{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 200px;
+	width: auto;
+}
+
+.active{
+	text-decoration: underline;
+}
+
+
+.nav-link{
+	padding: 3px;
+	font-size: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-decoration:none;
+	color: white;
+}
+
+.nav-link:hover{
+	color: #65615D;
+}
+
+
+#bannerHomeMobile{
+	display: none;
+}
+
+
+/*Footer content*/
+
+#footContact{
+	padding: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 25px;
+	border: none;
+	color: white;
+	font-size: 20px;
+	background-color: #B41831;
+	box-shadow: 2px 2px 3px grey;
+}
+
+#footContact:hover{
+	background-color: #EB6D81;
+	cursor: pointer;
+}
+
+#footLogo{
+	margin-top: 30px;
+	text-shadow: 2px 2px 5px gray;
+	height: 150px;
+	width: auto;
+}
+
+#footContainer{
+	font-size: 18px;
+	text-align: center;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: center;
+}
+
+footer{
+		padding-top: 50px;
+		padding-bottom: 50px;
+		height: auto;
+		background-color: #D6D6D6;
+		width: 100%;
+		}
+
+#divFootNav{
+	border-radius: 20px;
+	background-color: rgba(168,172,134,0.71);
+	width: 42%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	box-shadow: 2px 2px 3px grey;
+}
+
+#navFoot p{
+	text-shadow: 2px 2px 5px hsla(0,0%,54%,1.00);
+}
+
+
+.custom-toggler .navbar-toggler-icon {
+
+ 	 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+
+}
+
+.custom-toggler.navbar-toggler {
+	outline: none;
+	border-color: white;
+
+} 
+	
+
+@media  screen and (max-width: 576px){
+	
+	#headLogo{
+		height: 150px;
+	}
+	
+	#bannerHomeMobile{
+		display: block;
+	}
+	
+	#bannerHome{
+		display: none;
+	}
+	
+	#footLogo{
+		margin-top: 0px;
+	}
+	
+	#navFoot{
+		margin-top: 60px;
+		margin-bottom: 50px;
+	}
+	
+	#divFootNav{
+		width: 50%;
+}
+	
+	
+}
+
