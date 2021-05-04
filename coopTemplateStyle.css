@@ -95,7 +95,9 @@ footer{
 	padding-bottom: 3px;
 	box-shadow: 2px 2px 3px grey;
 }
-
+#divFootNav .nav-link {
+	color: black;
+}
 #navFoot p{
 	text-shadow: 2px 2px 5px hsla(0,0%,54%,1.00);
 }

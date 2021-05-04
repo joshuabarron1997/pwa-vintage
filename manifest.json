@@ -1,0 +1,21 @@
+{
+    "name": "Progressive Web App Vintage",
+    "short_name": "PWA Vintage",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "orientation": "landscape-primary",
+    "icons": [
+        {
+            "src": "/images/logo.png",
+            "type": "image/png",
+            "sizes": "352x285" 
+        },
+        {
+            "src": "/images/logoicon.png",
+            "type": "image/png",
+            "sizes": "144x144" 
+        }
+    ]
+
+
+}
